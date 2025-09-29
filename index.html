@@ -146,6 +146,312 @@
         "Explain organic chemistry to your pet.",
         "Integrate your sleep schedule ∫(dreams)dt."
       ];
+      <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Padhle Bhai — Chaospedia (Part 1)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4fbff; /* very light blue for low glare */
+    --card:#ffffff;
+    --chem:#2b7a78; /* teal for chemistry */
+    --phy:#114b5f;  /* deep cyan for physics */
+    --math:#f6aa1c; /* warm golden for maths */
+    --accent:#ef476f; /* contrasting accent */
+    --muted:#6b7280;
+    --glass: rgba(255,255,255,0.7);
+  }
+  *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#05263a}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#eaf6fb);}
+  header{display:flex;align-items:center;gap:16px;padding:18px 24px}
+  .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--chem),var(--phy));display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:22px}
+  .site-title{font-weight:900;font-size:20px}
+  .tagline{color:var(--muted);font-weight:600}
+  nav{margin-left:auto;display:flex;gap:10px;align-items:center}
+  nav button{background:transparent;border:1px solid rgba(5,38,58,0.06);padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+  main.wrap{max-width:1200px;margin:14px auto;padding:0 18px}
+  .topbar{display:flex;gap:12px;align-items:center}
+  .grid{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px}
+  .column{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 8px 18px rgba(6,20,30,0.06)}
+  .section-head{display:flex;align-items:center;gap:10px}
+  .pill{padding:6px 10px;border-radius:999px;font-weight:800}
+  .chem-pill{background:linear-gradient(90deg,var(--chem),#4fb3a1);color:#002926}
+  .phy-pill{background:linear-gradient(90deg,var(--phy),#2c7aa0);color:#e6fbff}
+  .math-pill{background:linear-gradient(90deg,var(--math),#ffc857);color:#2a1f07}
+  details{margin-top:8px;border-radius:8px;padding:10px;background:linear-gradient(180deg,rgba(2,6,11,0.01),rgba(2,6,11,0.02))}
+  summary{font-weight:800;cursor:pointer}
+  pre{background:#f3f9fb;padding:10px;border-radius:8px;overflow:auto}
+  .muted{color:var(--muted)}
+  .meme{margin-top:8px;padding:8px;border-radius:8px;background:linear-gradient(90deg,rgba(239,71,111,0.06),rgba(246,170,28,0.03));font-weight:800}
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  .btn-primary{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:800}
+  .btn-secondary{background:transparent;border:1px solid rgba(5,38,58,0.06);padding:8px 12px;border-radius:10px;cursor:pointer}
+  .search{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(5,38,58,0.06)}
+  aside.side{position:relative}
+  .dino{position:fixed;left:12px;bottom:12px;width:120px;height:80px;z-index:9999;pointer-events:none;transition:transform 0.6s linear}
+  /* Curisaurus eyes blink */
+  .dino svg{width:100%;height:100%}
+  footer{margin-top:18px;text-align:center;color:var(--muted);padding:14px}
+  @media(max-width:980px){.grid{grid-template-columns:1fr}.dino{display:none}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">PB</div>
+    <div>
+      <div class="site-title">Padhle Bhai — Chaospedia</div>
+      <div class="tagline">Part 1 • Structured revision for long-term memory</div>
+    </div>
+    <nav>
+      <input id="globalSearch" class="search" placeholder="Search topics, e.g. 'Arrhenius', 'Lagrange'" />
+      <button id="copyHTML">Copy HTML</button>
+      <button id="openTOC">TOC</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <div class="column">
+        <div class="section-head">
+          <h2 style="margin:0">Chemistry • Maths • Physics</h2>
+          <div style="margin-left:auto" class="controls">
+            <button class="btn-primary" id="partNext">Next Part</button>
+            <button class="btn-secondary" id="feedback">Notes</button>
+          </div>
+        </div>
+
+        <!-- Chemistry master section -->
+        <section id="chemistry" style="margin-top:12px">
+          <div class="section-head"><div class="pill chem-pill">Chemistry</div><div style="margin-left:8px" class="muted">High-yield / clean / meme-friendly</div></div>
+
+          <!-- Physical Chemistry -->
+          <details open>
+            <summary><strong>Physical Chemistry — Thermo, Kinetics, Statistical</strong></summary>
+            <div style="margin-top:10px">
+              <pre>ΔG° = -RT ln K    |    k = A e^{-Ea/RT}    |    S = k_B ln Ω</pre>
+              <p class="muted">Concept: ΔG links equilibrium & spontaneity; Arrhenius gives temperature sensitivity of rates; multiplicity builds entropy intuition.</p>
+              <p><strong>High-yield tricks</strong></p>
+              <ul>
+                <li>Use van 't Hoff approx for small ΔH changes: ln(K2/K1) ≈ -ΔH/R (1/T2 - 1/T1).</li>
+                <li>Units hint: Check k units to guess order (1st: s^-1, 2nd: M^-1 s^-1).</li>
+                <li>When Q ≪ K, reaction goes forward (product formation favored).</li>
+              </ul>
+              <div class="meme">Meme Tip: Treat Ea like a gatekeeper — only high-energy runners pass early.</div>
+              <p><strong>Real project idea:</strong> Measure reaction rate vs temperature for a visible reaction (e.g., iodination of acetone) and extract Ea from Arrhenius plot.</p>
+            </div>
+          </details>
+
+          <!-- Organic Chemistry -->
+          <details>
+            <summary><strong>Organic — Mechanisms & Named Reactions (concise)</strong></summary>
+            <div style="margin-top:10px">
+              <p class="muted">Focus on mechanism patterns, electron flow, and key named reactions (SN1/SN2 patterns, Aldol, Friedel–Crafts, EAS tendencies).</p>
+              <ul>
+                <li>SN2: backside attack, inversion. Rate ∝ [Nu][Sub].</li>
+                <li>Aldol: enolate + carbonyl → β-hydroxycarbonyl, reversible under base.</li>
+                <li>Friedel–Crafts: electrophilic aromatic substitution — activating/deactivating groups guide regiochemistry.</li>
+              </ul>
+              <div class="meme">Mnemonic: "Backside to Pass the Exam" (SN2 inversion).</div>
+              <p><strong>Study trick:</strong> Draw curly arrows slowly; narrate what the electrons 'want' to do in one sentence.</p>
+            </div>
+          </details>
+
+          <!-- Inorganic Chemistry -->
+          <details>
+            <summary><strong>Inorganic — Coordination & Periodicity</strong></summary>
+            <div style="margin-top:10px">
+              <pre>Crystal field splitting, ligand field considerations, valency trends across periods.</pre>
+              <p class="muted">Tip: Use spectrochemical series to compare Δ and predict high/low spin in d-block complexes.</p>
+              <div class="meme">Quick: Think of ligands as loud/quiet roommates — loud ones split energy more (big Δ).</div>
+              <p><strong>Application:</strong> Colour of complexes, magnetic behaviour, catalysis basics.</p>
+            </div>
+          </details>
+        </section>
+
+        <!-- Maths master section -->
+        <section id="maths" style="margin-top:18px">
+          <div class="section-head"><div class="pill math-pill">Mathematics</div><div style="margin-left:8px" class="muted">Complex, ODEs, Series, Problem-solving</div></div>
+          <details>
+            <summary><strong>Complex Numbers & Roots</strong></summary>
+            <div style="margin-top:10px">
+              <pre>z = x + iy  |  r e^{iθ}  |  De Moivre: (r e^{iθ})^n = r^n e^{inθ}</pre>
+              <p class="muted">Trick: Use geometry — roots are regular polygons on argand plane.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><strong>ODEs & Series</strong></summary>
+            <div style="margin-top:10px">
+              <pre>y' + p(x)y = q(x)  (linear)  |  Power series methods for non-constant coefficients</pre>
+              <p class="muted">Tip: For second-order with regular singular points, try Frobenius series.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><strong>Transforms — Laplace & Fourier (brief)</strong></summary>
+            <div style="margin-top:10px">
+              <pre>Laplace: F(s)=∫_0^∞ e^{-st} f(t) dt — useful for ODE initial value problems</pre>
+              <p class="muted">Application: Circuit transients, damping, control systems.</p>
+            </div>
+          </details>
+        </section>
+
+        <!-- Physics master section -->
+        <section id="physics" style="margin-top:18px">
+          <div class="section-head"><div class="pill phy-pill">Physics</div><div style="margin-left:8px" class="muted">Advanced core: dynamics, EM, QM hints</div></div>
+
+          <details open>
+            <summary><strong>Dynamics & Collisions</strong></summary>
+            <div style="margin-top:10px">
+              <pre>CM frame trick for elastic collisions simplifies to velocity sign reversal for equal masses.
+Impulse: Δp = ∫ F dt</pre>
+              <p class="muted">Application: Particle scattering, impact analysis.</p>
+              <div class="meme">Remember: In CM frame, ego is checked — velocities swap politely.</div>
+            </div>
+          </details>
+
+          <details>
+            <summary><strong>EM — Waves & Boundary conditions</strong></summary>
+            <div style="margin-top:10px">
+              <pre>Use continuity of tangential E and normal D at interfaces; Fresnel coefficients follow from boundary matching.</pre>
+              <p class="muted">Application: Optics, anti-reflection coatings, waveguides.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><strong>Quantum — Conceptual cues</strong></summary>
+            <div style="margin-top:10px">
+              <p class="muted">Key idea: Operators, eigenvalues, and boundary conditions determine quantized spectra. Practice particle-in-box and harmonic oscillator eigenfunctions for intuition.</p>
+              <div class="meme">Small trick: nodal count = energy level index (roughly).</div>
+            </div>
+          </details>
+        </section>
+
+      </div>
+
+      <aside class="column side">
+        <h3 style="margin-top:0">Curisaurus — your study dino</h3>
+        <p class="muted">Curisaurus (a curious dinosaur) roams the page — click buttons to move it. He points to the current section and gives tiny tips.</p>
+        <div style="margin-top:10px" class="controls">
+          <button id="dinoChem" class="btn-secondary">Chemistry</button>
+          <button id="dinoMath" class="btn-secondary">Maths</button>
+          <button id="dinoPhy" class="btn-secondary">Physics</button>
+        </div>
+
+        <div style="margin-top:14px" class="card">
+          <strong>Part planning</strong>
+          <p class="muted">This project will be released in parts. Part 1 = Structure + curated advanced notes. Next: Part 2 (Organic deep-dive) → Part 3 (Optics & Fluids) → Part 4 (Mocks & flashcards).</p>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <strong>Quick actions</strong>
+          <div style="margin-top:8px" class="controls">
+            <button id="copySnippet" class="btn-secondary">Copy selected text</button>
+            <button id="makeQR" class="btn-secondary">Open QR</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="card">
+          <strong>Revision micro-plan</strong>
+          <ol class="muted">
+            <li>Day 1: Thermo + kinetics (30 min)</li>
+            <li>Day 2: Collisions + rotational problems</li>
+            <li>Day 3: ODEs + transforms + quick mocks</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <small class="muted">Made for revision — clean, colourful, memory-friendly. Use the search and copy-html to push updates to GitHub. Curisaurus loves cookies (metaphorical).</small>
+    </footer>
+  </main>
+
+  <!-- Curisaurus animated SVG -->
+  <div id="curisaurus" class="dino" title="Curisaurus — curious study dino">
+    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+      <g id="dinoBody">
+        <ellipse cx="60" cy="70" rx="50" ry="28" fill="#7fb77e" stroke="#2f7a46" stroke-width="3" />
+        <circle cx="95" cy="52" r="18" fill="#7fb77e" stroke="#2f7a46" stroke-width="3" />
+        <circle cx="102" cy="48" r="4" fill="#05263a" />
+        <path d="M25 62 q-12 -8 -8 -18 q6 -12 20 -6" fill="#7fb77e" stroke="#2f7a46" stroke-width="3" />
+        <rect x="40" y="40" width="18" height="6" rx="2" fill="#2f7a46" />
+        <path d="M110 56 q18 6 32 -4 q6 -4 10 6 q2 8 -6 14" fill="#7fb77e" stroke="#2f7a46" stroke-width="3" />
+      </g>
+    </svg>
+  </div>
+
+<script>
+  // Curisaurus movement: move to section by scrolling target into view and animate dino position
+  const dino = document.getElementById('curisaurus');
+  const offsetLeft = 14; // fixed left
+  function moveDinoTo(targetSelector){
+    const target = document.querySelector(targetSelector);
+    if(!target) return;
+    target.scrollIntoView({behavior:'smooth',block:'center'});
+    // compute vertical position: map target center to viewport and place dino slightly above bottom
+    setTimeout(()=>{
+      const rect = target.getBoundingClientRect();
+      const viewportHeight = window.innerHeight; const bottomPadding = 120;
+      // if target in upper half, raise dino
+      const y = Math.max(12, Math.min(viewportHeight - bottomPadding, rect.top + rect.height/2 - 40));
+      dino.style.transform = `translateY(${y}px)`; // translateY in px
+    },500);
+  }
+
+  document.getElementById('dinoChem').addEventListener('click',()=>moveDinoTo('#chemistry'));
+  document.getElementById('dinoMath').addEventListener('click',()=>moveDinoTo('#maths'));
+  document.getElementById('dinoPhy').addEventListener('click',()=>moveDinoTo('#physics'));
+
+  // copy HTML
+  document.getElementById('copyHTML').addEventListener('click',async ()=>{
+    try{ await navigator.clipboard.writeText(document.documentElement.outerHTML); alert('Full page HTML copied to clipboard. Paste into GitHub index.html.'); }
+    catch(e){ alert('Copy failed. Use GitHub web editor to paste.'); }
+  });
+
+  // TOC opener
+  document.getElementById('openTOC').addEventListener('click',()=>{ document.getElementById('globalSearch').focus(); });
+
+  // search filter for details
+  document.getElementById('globalSearch').addEventListener('input',function(){
+    const q=this.value.toLowerCase().trim();
+    document.querySelectorAll('details').forEach(d=>{
+      const txt = d.innerText.toLowerCase();
+      d.open = q ? txt.includes(q) : false;
+      if(q && txt.includes(q)) d.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+
+  // copy selected
+  document.getElementById('copySnippet').addEventListener('click',async ()=>{
+    const sel = window.getSelection().toString().trim();
+    if(!sel) return alert('Select text to copy.');
+    await navigator.clipboard.writeText(sel); alert('Selected text copied.');
+  });
+
+  // QR open
+  document.getElementById('makeQR').addEventListener('click',()=>{
+    const url = location.href; const q = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' + encodeURIComponent(url);
+    window.open(q,'_blank');
+  });
+
+  // Part next placeholder
+  document.getElementById('partNext').addEventListener('click',()=>{
+    alert('Part 2 will dive deep into Organic named reactions and advanced problem templates. I will generate and provide the HTML when you are ready to paste.');
+  });
+
+  // position dino initial after load
+  window.addEventListener('load',()=>{
+    // place dino near bottom-left
+    dino.style.transform = `translateY(${window.innerHeight-160}px)`;
+  });
+</script>
+</body>
+</html>
+
       alert(prompts[Math.floor(Math.random()*prompts.length)]);
     }
   </script>
