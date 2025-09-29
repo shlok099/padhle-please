@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Padhle Bhai: The Surreal JEE Carnival</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(270deg, #111, #222);
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+      font-size: 2rem;
+      font-weight: bold;
+      animation: glitch 2s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #0f0; }
+      50% { text-shadow: -2px -2px #f00; }
+      100% { text-shadow: 2px -2px #0ff; }
+    }
+    .chapter {
+      border: 2px dashed #555;
+      border-radius: 12px;
+      margin: 1rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.6);
+    }
+    .chapter h2 {
+      cursor: pointer;
+      margin: 0;
+      padding: 0.5rem;
+      background: #333;
+      border-radius: 8px;
+    }
+    .content {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    .meme {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: #222;
+      border-left: 4px solid #0ff;
+      font-style: italic;
+    }
+    button {
+      background: #0ff;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #f0f;
+      color: #000;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    📚 Padhle Bhai: The Surreal JEE Carnival 🚀
+  </header>
+
+  <!-- Physics -->
+  <section class="chapter">
+    <h2>Physics: Quantum Chaos & Black Hole Mechanics</h2>
+    <div class="content">
+      <p><strong>Formula:</strong> Schrödinger's Equation — iħ ∂Ψ/∂t = HΨ</p>
+      <p><strong>Application:</strong> Explains why your calculator dies exactly in an exam hall: quantum tunneling of patience.</p>
+      <div class="meme">Meme Trick: “Ψ is just you sighing before exams.”</div>
+
+      <p><strong>Hidden Concept:</strong> If you spin a fidget spinner near a black hole, time dilates. In exams, it feels the same.</p>
+      <p><strong>Trick:</strong> In Rotational Dynamics, imagine torque as the “anger” you apply to open a jammed Maggi jar.</p>
+    </div>
+  </section>
+
+  <!-- Chemistry -->
+  <section class="chapter">
+    <h2>Chemistry: Surreal Bonds & Explosions</h2>
+    <div class="content">
+      <p><strong>Formula:</strong> ΔG = ΔH - TΔS</p>
+      <p><strong>Application:</strong> Decides whether cooking noodles is spontaneous or requires mom’s intervention.</p>
+      <div class="meme">Meme Trick: “Gibbs Free Energy = Gossip Free Energy. Negative gossip spreads spontaneously.”</div>
+
+      <p><strong>Hidden Concept:</strong> If Avogadro’s number was WhatsApp forwards, the universe would collapse from spam.</p>
+      <p><strong>Trick:</strong> For hybridization, imagine orbitals as flatmates fighting over kitchen space.</p>
+    </div>
+  </section>
+
+  <!-- Math -->
+  <section class="chapter">
+    <h2>Math: Infinite Absurdities</h2>
+    <div class="content">
+      <p><strong>Formula:</strong> ∫ e^x dx = e^x + C</p>
+      <p><strong>Application:</strong> Every exponential rise in exam stress has an integration constant: coffee.</p>
+      <div class="meme">Meme Trick: “Integration is like gossip collection — all rumors + C.”</div>
+
+      <p><strong>Hidden Concept:</strong> In imaginary number space, you can pay exam fees with i-Rupees.</p>
+      <p><strong>Trick:</strong> For limits, imagine l’Hôpital’s rule as a doctor curing sick fractions.</p>
+    </div>
+  </section>
+
+  <!-- Fun Chaos -->
+  <div style="text-align:center; margin:2rem;">
+    <button onclick="chaos()">Inject Chaos</button>
+    <button onclick="randomStudy()">Random Study Prompt</button>
+  </div>
+
+  <footer>
+    Made for JEE warriors — May your entropy always increase 📈
+  </footer>
+
+  <script>
+    // Toggle content on chapter click
+    document.querySelectorAll('.chapter h2').forEach(h2 => {
+      h2.addEventListener('click', () => {
+        const content = h2.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    function chaos() {
+      alert("🌪 Chaos Unlocked: Your syllabus just doubled.");
+      document.body.style.background = `hsl(${Math.random()*360}, 70%, 10%)`;
+    }
+
+    function randomStudy() {
+      const prompts = [
+        "Revise Thermodynamics while eating ice cream.",
+        "Solve a mechanics problem upside down.",
+        "Explain organic chemistry to your pet.",
+        "Integrate your sleep schedule ∫(dreams)dt."
+      ];
+      alert(prompts[Math.floor(Math.random()*prompts.length)]);
+    }
+  </script>
+</body>
+</html>
